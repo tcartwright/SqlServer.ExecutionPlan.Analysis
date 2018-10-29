@@ -1,0 +1,242 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{68C12755-4353-4A7D-A37F-BB763373C5E5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SqlServer.ExecutionPlan.Analysis</RootNamespace>
+    <AssemblyName>SqlServer.ExecutionPlan.Analysis</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisRuleSet>..\CodeAnalysis.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug CLR|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug CLR\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;CODE_ANALYSIS;CLR</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>..\CodeAnalysis.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release CLR|AnyCPU'">
+    <OutputPath>bin\Release CLR\</OutputPath>
+    <DefineConstants>TRACE;CLR</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.SqlServer.TransactSql.ScriptDom, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Checks\BasePlanIssueCheck.cs" />
+    <Compile Include="Checks\RelOpArgs.cs" />
+    <Compile Include="Checks\StatementChecks\CheckForStatementCost.cs" />
+    <Compile Include="Checks\StatementChecks\CheckForFatPipes.cs" />
+    <Compile Include="Checks\RelOpChecks\CheckForSpools.cs" />
+    <Compile Include="Checks\RelOpChecks\CheckForScans.cs" />
+    <Compile Include="Checks\RelOpChecks\CheckForHighCostSort.cs" />
+    <Compile Include="Checks\RelOpChecks\CheckForKeyLookups.cs" />
+    <Compile Include="Checks\RelOpChecks\CheckForTableFunctionJoins.cs" />
+    <Compile Include="Checks\RelOpChecks\CheckForRelOpWarnings.cs" />
+    <Compile Include="Checks\StatementChecks\CheckForCosts.cs" />
+    <Compile Include="Checks\StatementChecks\CheckForParameterizedSql.cs" />
+    <Compile Include="Checks\StatementChecks\CheckForConvertImplicits.cs" />
+    <Compile Include="Checks\StatementChecks\CheckForCompileIssues.cs" />
+    <Compile Include="Checks\StatementChecks\CheckForMissingIndexes.cs" />
+    <Compile Include="Checks\StatementChecks\CheckForWarnings.cs" />
+    <Compile Include="Checks\StatementChecks\CheckForTooManyJoins.cs" />
+    <Compile Include="Checks\StatementChecks\CheckForCursor.cs" />
+    <Compile Include="Checks\StatementChecks\CheckForHighDesiredMemory.cs" />
+    <Compile Include="Checks\StatementChecks\CheckForNolock.cs" />
+    <Compile Include="Checks\CheckParameters.cs" />
+    <Compile Include="Checks\StatementArgs.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Enums.cs" />
+    <Compile Include="IPlanIssueResult.cs" />
+    <Compile Include="PlanIssueResult.cs" />
+    <Compile Include="PlanTransformer.cs" />
+    <Compile Include="PlanValidator.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="showplan.cs">
+      <DependentUpon>ShowPlan.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Internals\SqlParser.cs" />
+    <Compile Include="Internals\SqlPlanAnalysisXNames.cs" />
+    <Compile Include="Internals\SqlPlanXNames.cs" />
+    <Compile Include="Internals\XElementExtensionMethods.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="key.snk" />
+    <None Include="ShowPlan.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Resources\AnalysisTemplate.html" />
+    <Content Include="Resources\images\arithmetic.gif" />
+    <Content Include="Resources\images\arithmetic_expression.gif" />
+    <Content Include="Resources\images\assert.gif" />
+    <Content Include="Resources\images\assign.gif" />
+    <Content Include="Resources\images\bitmap.gif" />
+    <Content Include="Resources\images\bookmark_lookup.gif" />
+    <Content Include="Resources\images\clustered_index_delete.gif" />
+    <Content Include="Resources\images\clustered_index_insert.gif" />
+    <Content Include="Resources\images\clustered_index_merge.gif" />
+    <Content Include="Resources\images\clustered_index_scan.gif" />
+    <Content Include="Resources\images\clustered_index_seek.gif" />
+    <Content Include="Resources\images\clustered_index_update.gif" />
+    <Content Include="Resources\images\collapse.gif" />
+    <Content Include="Resources\images\compute_scalar.gif" />
+    <Content Include="Resources\images\concatenation.gif" />
+    <Content Include="Resources\images\constant_scan.gif" />
+    <Content Include="Resources\images\convert.gif" />
+    <Content Include="Resources\images\cursor_catchall.gif" />
+    <Content Include="Resources\images\declare.gif" />
+    <Content Include="Resources\images\delete.gif" />
+    <Content Include="Resources\images\deleted_scan.gif" />
+    <Content Include="Resources\images\distribute_streams.gif" />
+    <Content Include="Resources\images\dynamic.gif" />
+    <Content Include="Resources\images\eager_spool.gif" />
+    <Content Include="Resources\images\fetch_query.gif" />
+    <Content Include="Resources\images\filter.gif" />
+    <Content Include="Resources\images\gather_streams.gif" />
+    <Content Include="Resources\images\hash_match.gif" />
+    <Content Include="Resources\images\hash_match_root.gif" />
+    <Content Include="Resources\images\hash_match_team.gif" />
+    <Content Include="Resources\images\if.gif" />
+    <Content Include="Resources\images\index_scan.gif" />
+    <Content Include="Resources\images\index_spool.gif" />
+    <Content Include="Resources\images\insert.gif" />
+    <Content Include="Resources\images\inserted_scan.gif" />
+    <Content Include="Resources\images\intrinsic.gif" />
+    <Content Include="Resources\images\iterator_catchall.gif" />
+    <Content Include="Resources\images\keyset.gif" />
+    <Content Include="Resources\images\key_lookup.gif" />
+    <Content Include="Resources\images\language_element_catchall.gif" />
+    <Content Include="Resources\images\lazy_spool.gif" />
+    <Content Include="Resources\images\log_row_scan.gif" />
+    <Content Include="Resources\images\merge_interval.gif" />
+    <Content Include="Resources\images\merge_join.gif" />
+    <Content Include="Resources\images\nested_loops.gif" />
+    <Content Include="Resources\images\nonclustered_index_delete.gif" />
+    <Content Include="Resources\images\nonclustered_index_insert.gif" />
+    <Content Include="Resources\images\nonclustered_index_scan.gif" />
+    <Content Include="Resources\images\nonclustered_index_seek.gif" />
+    <Content Include="Resources\images\nonclustered_index_spool.gif" />
+    <Content Include="Resources\images\nonclustered_index_update.gif" />
+    <Content Include="Resources\images\online_index_insert.gif" />
+    <Content Include="Resources\images\parallelism.png" />
+    <Content Include="Resources\images\parameter_table_scan.gif" />
+    <Content Include="Resources\images\population_query.gif" />
+    <Content Include="Resources\images\rdi_lookup.gif" />
+    <Content Include="Resources\images\refresh_query.gif" />
+    <Content Include="Resources\images\remote_delete.gif" />
+    <Content Include="Resources\images\remote_index_scan.gif" />
+    <Content Include="Resources\images\remote_index_seek.gif" />
+    <Content Include="Resources\images\remote_insert.gif" />
+    <Content Include="Resources\images\remote_query.gif" />
+    <Content Include="Resources\images\remote_scan.gif" />
+    <Content Include="Resources\images\remote_update.gif" />
+    <Content Include="Resources\images\repartition_streams.gif" />
+    <Content Include="Resources\images\result.gif" />
+    <Content Include="Resources\images\rid_lookup.gif" />
+    <Content Include="Resources\images\row_count_spool.gif" />
+    <Content Include="Resources\images\segment.gif" />
+    <Content Include="Resources\images\sequence.gif" />
+    <Content Include="Resources\images\sequenceproject.gif" />
+    <Content Include="Resources\images\sequence_project.gif" />
+    <Content Include="Resources\images\snapshot.gif" />
+    <Content Include="Resources\images\sort.gif" />
+    <Content Include="Resources\images\split.gif" />
+    <Content Include="Resources\images\spool.gif" />
+    <Content Include="Resources\images\stream_aggregate.gif" />
+    <Content Include="Resources\images\switch.gif" />
+    <Content Include="Resources\images\t-sql.gif" />
+    <Content Include="Resources\images\t-sql.jpeg" />
+    <Content Include="Resources\images\table_delete.gif" />
+    <Content Include="Resources\images\table_insert.gif" />
+    <Content Include="Resources\images\table_merge.gif" />
+    <Content Include="Resources\images\table_scan.gif" />
+    <Content Include="Resources\images\table_spool.gif" />
+    <Content Include="Resources\images\table_update.gif" />
+    <Content Include="Resources\images\table_valued_function.gif" />
+    <Content Include="Resources\images\top.gif" />
+    <Content Include="Resources\images\udx.gif" />
+    <Content Include="Resources\images\update.gif" />
+    <Content Include="Resources\images\while.gif" />
+    <Content Include="Resources\jquery-ui.min.js" />
+    <Content Include="Resources\jquery.min.js" />
+    <Content Include="Resources\LICENSE.txt" />
+    <Content Include="Resources\qp-tooltip.js" />
+    <Content Include="Resources\qp.css" />
+    <Content Include="Resources\qp.js" />
+    <Content Include="Resources\qp.xslt" />
+    <Content Include="Resources\qp_page.xslt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

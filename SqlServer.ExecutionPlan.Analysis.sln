@@ -1,0 +1,84 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2035
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqlServer.ExecutionPlan.Analysis", "SqlServer.Analysis\SqlServer.ExecutionPlan.Analysis.csproj", "{68C12755-4353-4A7D-A37F-BB763373C5E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqlServer.ExecutionPlan.Analysis.App", "SqlServer.Analysis.App\SqlServer.ExecutionPlan.Analysis.App.csproj", "{4C24A369-BD55-4035-8568-5169BC064D29}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SqlServer.ExecutionPlan.Analysis.Clr", "SqlServer.Analysis.Clr\SqlServer.ExecutionPlan.Analysis.Clr.sqlproj", "{8EF5133E-62A8-4EFC-8FF4-0726C851F629}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C4464A4E-AEA8-4FF9-909F-9AEC06A0C890}"
+	ProjectSection(SolutionItems) = preProject
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		CodeAnalysis.ruleset = CodeAnalysis.ruleset
+		SQL Server Execution Plan Analysis.docx = SQL Server Execution Plan Analysis.docx
+		sqlplan.ico = sqlplan.ico
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqlServer.ExecutionPlan.Analysis.SSMSExtension", "SqlServer.Analysis.SSMSExtension\SqlServer.ExecutionPlan.Analysis.SSMSExtension.csproj", "{C6580FAE-07DA-4E68-94F8-E584EAC038C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqlServer.ExecutionPlan.Analysis.SSMSAddin", "SqlServer.Analysis.SSMSAddin\SqlServer.ExecutionPlan.Analysis.SSMSAddin.csproj", "{54C786E5-FD14-4036-92AE-E9F25B71534B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug CLR|Any CPU = Debug CLR|Any CPU
+		Debug|Any CPU = Debug|Any CPU
+		Release CLR|Any CPU = Release CLR|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{68C12755-4353-4A7D-A37F-BB763373C5E5}.Debug CLR|Any CPU.ActiveCfg = Debug CLR|Any CPU
+		{68C12755-4353-4A7D-A37F-BB763373C5E5}.Debug CLR|Any CPU.Build.0 = Debug CLR|Any CPU
+		{68C12755-4353-4A7D-A37F-BB763373C5E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68C12755-4353-4A7D-A37F-BB763373C5E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68C12755-4353-4A7D-A37F-BB763373C5E5}.Release CLR|Any CPU.ActiveCfg = Release CLR|Any CPU
+		{68C12755-4353-4A7D-A37F-BB763373C5E5}.Release CLR|Any CPU.Build.0 = Release CLR|Any CPU
+		{68C12755-4353-4A7D-A37F-BB763373C5E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68C12755-4353-4A7D-A37F-BB763373C5E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C24A369-BD55-4035-8568-5169BC064D29}.Debug CLR|Any CPU.ActiveCfg = Debug CLR|Any CPU
+		{4C24A369-BD55-4035-8568-5169BC064D29}.Debug CLR|Any CPU.Build.0 = Debug CLR|Any CPU
+		{4C24A369-BD55-4035-8568-5169BC064D29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C24A369-BD55-4035-8568-5169BC064D29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C24A369-BD55-4035-8568-5169BC064D29}.Release CLR|Any CPU.ActiveCfg = Release CLR|Any CPU
+		{4C24A369-BD55-4035-8568-5169BC064D29}.Release CLR|Any CPU.Build.0 = Release CLR|Any CPU
+		{4C24A369-BD55-4035-8568-5169BC064D29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C24A369-BD55-4035-8568-5169BC064D29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EF5133E-62A8-4EFC-8FF4-0726C851F629}.Debug CLR|Any CPU.ActiveCfg = Debug CLR|Any CPU
+		{8EF5133E-62A8-4EFC-8FF4-0726C851F629}.Debug CLR|Any CPU.Build.0 = Debug CLR|Any CPU
+		{8EF5133E-62A8-4EFC-8FF4-0726C851F629}.Debug CLR|Any CPU.Deploy.0 = Debug CLR|Any CPU
+		{8EF5133E-62A8-4EFC-8FF4-0726C851F629}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EF5133E-62A8-4EFC-8FF4-0726C851F629}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EF5133E-62A8-4EFC-8FF4-0726C851F629}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{8EF5133E-62A8-4EFC-8FF4-0726C851F629}.Release CLR|Any CPU.ActiveCfg = Release CLR|Any CPU
+		{8EF5133E-62A8-4EFC-8FF4-0726C851F629}.Release CLR|Any CPU.Build.0 = Release CLR|Any CPU
+		{8EF5133E-62A8-4EFC-8FF4-0726C851F629}.Release CLR|Any CPU.Deploy.0 = Release CLR|Any CPU
+		{8EF5133E-62A8-4EFC-8FF4-0726C851F629}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EF5133E-62A8-4EFC-8FF4-0726C851F629}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EF5133E-62A8-4EFC-8FF4-0726C851F629}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{C6580FAE-07DA-4E68-94F8-E584EAC038C0}.Debug CLR|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6580FAE-07DA-4E68-94F8-E584EAC038C0}.Debug CLR|Any CPU.Build.0 = Debug|Any CPU
+		{C6580FAE-07DA-4E68-94F8-E584EAC038C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6580FAE-07DA-4E68-94F8-E584EAC038C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6580FAE-07DA-4E68-94F8-E584EAC038C0}.Release CLR|Any CPU.ActiveCfg = Release|Any CPU
+		{C6580FAE-07DA-4E68-94F8-E584EAC038C0}.Release CLR|Any CPU.Build.0 = Release|Any CPU
+		{C6580FAE-07DA-4E68-94F8-E584EAC038C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6580FAE-07DA-4E68-94F8-E584EAC038C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54C786E5-FD14-4036-92AE-E9F25B71534B}.Debug CLR|Any CPU.ActiveCfg = Debug CLR|Any CPU
+		{54C786E5-FD14-4036-92AE-E9F25B71534B}.Debug CLR|Any CPU.Build.0 = Debug CLR|Any CPU
+		{54C786E5-FD14-4036-92AE-E9F25B71534B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54C786E5-FD14-4036-92AE-E9F25B71534B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54C786E5-FD14-4036-92AE-E9F25B71534B}.Release CLR|Any CPU.ActiveCfg = Release CLR|Any CPU
+		{54C786E5-FD14-4036-92AE-E9F25B71534B}.Release CLR|Any CPU.Build.0 = Release CLR|Any CPU
+		{54C786E5-FD14-4036-92AE-E9F25B71534B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54C786E5-FD14-4036-92AE-E9F25B71534B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5CBB6873-E177-40E9-8132-5FC34873190A}
+	EndGlobalSection
+EndGlobal

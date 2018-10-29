@@ -1,0 +1,183 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SqlServer.ExecutionPlan.Analysis.SSMSAddin</name>
+    </assembly>
+    <members>
+        <member name="T:SqlServer.ExecutionPlan.Analysis.SSMSAddin.PlanAnalysis">
+            <summary>
+            Class Connect.
+            </summary>
+            <seealso cref="T:Extensibility.IDTExtensibility2" />
+            <seealso cref="T:EnvDTE.IDTCommandTarget" />
+        </member>
+        <member name="M:SqlServer.ExecutionPlan.Analysis.SSMSAddin.PlanAnalysis.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:SqlServer.ExecutionPlan.Analysis.SSMSAddin.PlanAnalysis"/> class.
+            </summary>
+        </member>
+        <member name="M:SqlServer.ExecutionPlan.Analysis.SSMSAddin.PlanAnalysis.#ctor(EnvDTE.DTE)">
+            <summary>
+            
+            </summary>
+            <param name="dte"></param>
+        </member>
+        <member name="M:SqlServer.ExecutionPlan.Analysis.SSMSAddin.PlanAnalysis.OnConnection(System.Object,Extensibility.ext_ConnectMode,System.Object,System.Array@)">
+            <summary>
+            Implements the OnConnection method of the IDTExtensibility2 interface. Receives notification that the Add-in is being loaded.
+            </summary>
+            <param name="Application">The application.</param>
+            <param name="ConnectMode">The connect mode.</param>
+            <param name="AddInInst">The add in inst.</param>
+            <param name="custom">The custom.</param>
+            <seealso class="IDTExtensibility2" />
+        </member>
+        <member name="M:SqlServer.ExecutionPlan.Analysis.SSMSAddin.PlanAnalysis.OnDisconnection(Extensibility.ext_DisconnectMode,System.Array@)">
+            <summary>
+            Implements the OnDisconnection method of the IDTExtensibility2 interface. Receives notification that the Add-in is being unloaded.
+            </summary>
+            <param name="RemoveMode">The remove mode.</param>
+            <param name="custom">The custom.</param>
+            <seealso class="IDTExtensibility2" />
+        </member>
+        <member name="M:SqlServer.ExecutionPlan.Analysis.SSMSAddin.PlanAnalysis.OnAddInsUpdate(System.Array@)">
+            <summary>
+            Implements the OnAddInsUpdate method of the IDTExtensibility2 interface. Receives notification when the collection of Add-ins has changed.
+            </summary>
+            <param name="custom">The custom.</param>
+            <seealso class="IDTExtensibility2" />
+        </member>
+        <member name="M:SqlServer.ExecutionPlan.Analysis.SSMSAddin.PlanAnalysis.OnStartupComplete(System.Array@)">
+            <summary>
+            Implements the OnStartupComplete method of the IDTExtensibility2 interface. Receives notification that the host application has completed loading.
+            </summary>
+            <param name="custom">The custom.</param>
+            <seealso class="IDTExtensibility2" />
+        </member>
+        <member name="M:SqlServer.ExecutionPlan.Analysis.SSMSAddin.PlanAnalysis.OnBeginShutdown(System.Array@)">
+            <summary>
+            Implements the OnBeginShutdown method of the IDTExtensibility2 interface. Receives notification that the host application is being unloaded.
+            </summary>
+            <param name="custom">The custom.</param>
+            <seealso class="IDTExtensibility2" />
+        </member>
+        <member name="M:SqlServer.ExecutionPlan.Analysis.SSMSAddin.PlanAnalysis.Exec(System.String,EnvDTE.vsCommandExecOption,System.Object@,System.Object@,System.Boolean@)">
+            <summary>
+            Executes the specified command name.
+            </summary>
+            <param name="CmdName">Name of the command.</param>
+            <param name="ExecuteOption">The execute option.</param>
+            <param name="VariantIn">The variant in.</param>
+            <param name="VariantOut">The variant out.</param>
+            <param name="Handled">if set to <c>true</c> [handled].</param>
+        </member>
+        <member name="M:SqlServer.ExecutionPlan.Analysis.SSMSAddin.PlanAnalysis.QueryStatus(System.String,EnvDTE.vsCommandStatusTextWanted,EnvDTE.vsCommandStatus@,System.Object@)">
+            <summary>
+            Queries the status.
+            </summary>
+            <param name="CmdName">Name of the command.</param>
+            <param name="NeededText">The needed text.</param>
+            <param name="StatusOption">The status option.</param>
+            <param name="CommandText">The command text.</param>
+        </member>
+        <member name="M:SqlServer.ExecutionPlan.Analysis.SSMSAddin.PlanAnalysis.CreateMenuButton(System.String,System.Int32,System.String,Microsoft.VisualStudio.CommandBars.CommandBar,System.String,System.String,System.Boolean)">
+            <summary>
+            Creates the menu button.
+            </summary>
+            <param name="commandName">Name of the command.</param>
+            <param name="commandImg">The command img.</param>
+            <param name="description">The description.</param>
+            <param name="bar">The bar.</param>
+            <param name="buttonCaption">The button caption.</param>
+            <param name="hotkey">The hotkey.</param>
+            <param name="beginGroup">if set to <c>true</c> [begin group].</param>
+            <returns>CommandBarButton.</returns>
+        </member>
+        <member name="M:SqlServer.ExecutionPlan.Analysis.SSMSAddin.PlanAnalysis.ShowAnalysis(System.Boolean@)">
+            <summary>
+            Shows the analysis.
+            </summary>
+            <param name="Handled">if set to <c>true</c> [handled].</param>
+        </member>
+        <member name="M:SqlServer.ExecutionPlan.Analysis.SSMSAddin.PlanAnalysis.GetPlanXml(System.Type,System.Reflection.MethodInfo,System.Reflection.FieldInfo,System.Reflection.MethodInfo,System.Windows.Forms.Control)">
+            <summary>
+            Gets the plan XML.
+            </summary>
+            <param name="showPlanControlType">Type of the show plan control.</param>
+            <param name="showPlanXmlMethod">The show plan XML method.</param>
+            <param name="dataBindingsField">The data bindings field.</param>
+            <param name="getGraphPanelMethod">The get graph panel method.</param>
+            <param name="showPlanControl">The show plan control.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:SqlServer.ExecutionPlan.Analysis.SSMSAddin.PlanAnalysis.GeScriptEditorControl(System.Type)">
+            <summary>
+            Gets the active script editor control.
+            </summary>
+            <param name="scriptEditorControlType">Type of the script editor control.</param>
+            <returns>System.Object.</returns>
+        </member>
+        <member name="M:SqlServer.ExecutionPlan.Analysis.SSMSAddin.PlanAnalysis.FindParentControl(System.Windows.Forms.Control,System.Type)">
+            <summary>
+            Finds the parent control.
+            </summary>
+            <param name="control">The control.</param>
+            <param name="controlType">Type of the control.</param>
+            <returns>Control.</returns>
+        </member>
+        <member name="M:SqlServer.ExecutionPlan.Analysis.SSMSAddin.PlanAnalysis.FindControlRecursive(System.Windows.Forms.Control,System.Type)">
+            <summary>
+            Finds the control recursively.
+            </summary>
+            <param name="control">The control.</param>
+            <param name="controlType">Type of the control.</param>
+            <returns>Control.</returns>
+        </member>
+        <member name="T:SqlServer.ExecutionPlan.Analysis.SSMSAddin.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:SqlServer.ExecutionPlan.Analysis.SSMSAddin.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:SqlServer.ExecutionPlan.Analysis.SSMSAddin.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:SqlServer.ExecutionPlan.Analysis.SSMSAddin.Properties.Resources.PlanAnalysis_CreateMenuButton_Exception_creating_new_menu_item">
+            <summary>
+              Looks up a localized string similar to Exception creating new menu item: .
+            </summary>
+        </member>
+        <member name="P:SqlServer.ExecutionPlan.Analysis.SSMSAddin.Properties.Resources.PlanAnalysis_PlanAnalysis_Could_not_load_SQLEditors_assembly">
+            <summary>
+              Looks up a localized string similar to Could not load SQLEditors assembly..
+            </summary>
+        </member>
+        <member name="P:SqlServer.ExecutionPlan.Analysis.SSMSAddin.Properties.Resources.PlanAnalysis_PlanAnalysis_Could_not_load_the_ScriptEditorControl_type_from_the_SQLEditors_assembly">
+            <summary>
+              Looks up a localized string similar to Could not load the ScriptEditorControl type from the SQLEditors assembly..
+            </summary>
+        </member>
+        <member name="P:SqlServer.ExecutionPlan.Analysis.SSMSAddin.Properties.Resources.PlanAnalysis_PlanAnalysis_Could_not_load_the_ShowPlanControl_type_from_the_SQLEditors_assembly">
+            <summary>
+              Looks up a localized string similar to Could not load the ShowPlanControl type from the SQLEditors assembly..
+            </summary>
+        </member>
+        <member name="P:SqlServer.ExecutionPlan.Analysis.SSMSAddin.Properties.Resources.PlanAnalysis_ShowAnalysis_Could_not_find_the_parent_control">
+            <summary>
+              Looks up a localized string similar to Could not find the parent control..
+            </summary>
+        </member>
+        <member name="P:SqlServer.ExecutionPlan.Analysis.SSMSAddin.Properties.Resources.PlanAnalysis_ShowAnalysis_Exception_generating_plan_analysis">
+            <summary>
+              Looks up a localized string similar to Exception generating plan analysis: .
+            </summary>
+        </member>
+    </members>
+</doc>

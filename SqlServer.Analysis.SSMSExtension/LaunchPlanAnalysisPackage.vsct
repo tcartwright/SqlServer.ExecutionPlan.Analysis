@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<!--This is the file that defines the IDs for all the commands exposed by VisualStudio. -->
+	<Extern href="stdidcmd.h"/>
+	<!--This header contains the command ids for the menus provided by the shell. -->
+	<Extern href="vsshlids.h"/>
+	<Extern href="PlanAnalysis.h"/>
+
+	<Commands package="guidLaunchPlanAnalysisPackage">
+		<Groups>
+			<Group guid="guidLaunchPlanAnalysisPackageCmdSet" id="MyMenuGroup" priority="0x0000">
+				<Parent guid="guidExecutionPlanContextMenuCommandSet" id="ExecutionPlanContextMenu" />
+			</Group>
+		</Groups>
+		<Buttons>
+			<Button guid="guidLaunchPlanAnalysisPackageCmdSet" id="LaunchPlanAnalysisId" priority="0x0100" type="Button">
+				<Parent guid="guidLaunchPlanAnalysisPackageCmdSet" id="MyMenuGroup" />
+				<Strings>
+					<ButtonText>View with SQL Server Execution Plan Analysis</ButtonText>
+				</Strings>
+			</Button>
+		</Buttons>
+	</Commands>
+
+	<Symbols>
+		<!-- This is the package guid. -->
+		<GuidSymbol name="guidLaunchPlanAnalysisPackage" value="{4f435be6-6197-4074-9f8e-9040e9ec0ac1}" />
+
+		<!-- This is the guid used to group the menu commands together -->
+		<GuidSymbol name="guidLaunchPlanAnalysisPackageCmdSet" value="{EDCB9381-59B4-49C8-A36B-C887DF7AC119}">
+			<IDSymbol name="ExecutionPlanContextMenu" value="0x0080" />
+		</GuidSymbol>
+
+		<GuidSymbol name="guidOfficeIcon" value="{d309f794-903f-11d0-9efc-00a0c911004f}">
+			<IDSymbol name="msotcidNoIcon" value="0x02EA" />
+		</GuidSymbol>
+	</Symbols>
+</CommandTable>
